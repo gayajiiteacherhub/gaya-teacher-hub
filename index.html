@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Business - Professional Services</title>
+    <title>Gayajii Teacher Hub - Best Tuition & Teaching Services</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,35 +13,41 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: #fff;
             line-height: 1.6;
-            color: #333;
+            overflow-x: hidden;
         }
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 0;
             position: fixed;
-            width: 100%;
             top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
         }
 
         nav {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 0 2rem;
         }
 
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .nav-links {
@@ -50,190 +57,272 @@
         }
 
         .nav-links a {
-            color: white;
+            color: #fff;
             text-decoration: none;
             font-weight: 500;
-            transition: opacity 0.3s;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .nav-links a:hover {
-            opacity: 0.8;
+            color: #ffd700;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23667eea" width="1200" height="600"/><text x="50%" y="50%" font-size="60" fill="white" text-anchor="middle" dy=".3em">Your Hero Image</text></svg>');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #ffd700;
+            transition: 0.3s;
+        }
+
+        /* Main Sections */
+        section {
+            padding: 100px 0;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 80px;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
         }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #ff6b6b;
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-
-        .cta-button:hover {
-            background: #ff5252;
-            transform: translateY(-2px);
-        }
-
-        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        /* Why Choose Us Section */
-        .why-choose-us {
-            padding: 100px 0;
-            background: #f8f9fa;
+        /* Home Section */
+        #home {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(26,26,26,0.9) 100%);
+            text-align: center;
+            justify-content: center;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            color: #000;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+        }
+
+        /* About Section */
+        #about {
+            background: rgba(0, 0, 0, 0.7);
         }
 
         .section-title {
+            font-size: 3rem;
             text-align: center;
-            font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #2c3e50;
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .why-grid {
+        .about-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .why-card {
-            background: white;
-            padding: 2.5rem 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-            height: 100%;
-        }
-
-        .why-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .why-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2rem;
-            color: white;
-        }
-
-        .why-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #2c3e50;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 100px 0;
-            background: white;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
+            margin-top: 2rem;
         }
 
         .service-card {
-            background: #f8f9fa;
-            padding: 3rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
             border-radius: 20px;
             text-align: center;
-            transition: all 0.3s;
-            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 215, 0, 0.2);
         }
 
         .service-card:hover {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border-color: #667eea;
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            background: rgba(255, 215, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
         }
 
-        .service-card:hover .service-number {
-            background: white;
-            color: #667eea;
-        }
-
-        .service-number {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white;
-        }
-
-        .service-card h3 {
-            font-size: 1.8rem;
+        .service-icon {
+            font-size: 3rem;
+            color: #ffd700;
             margin-bottom: 1rem;
         }
 
+        /* Services Section */
+        #services .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
         /* Contact Section */
-        .contact {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
+        #contact {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ffd700;
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            color: #000;
+            padding: 18px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
         }
 
         /* Footer */
         footer {
-            background: #2c3e50;
-            color: white;
+            background: rgba(0, 0, 0, 0.95);
             text-align: center;
-            padding: 2rem 0;
+            padding: 2rem;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
         }
 
-        /* Responsive */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: #ffd700;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsiveness */
         @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
             .nav-links {
-                display: none;
+                position: fixed;
+                top: 100%;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 100px);
+                background: rgba(0, 0, 0, 0.98);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: left 0.3s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
             }
 
             .hero-content h1 {
@@ -244,9 +333,14 @@
                 font-size: 2rem;
             }
 
-            .container {
+            nav {
                 padding: 0 1rem;
             }
+        }
+
+        /* Scroll Behavior */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
@@ -254,117 +348,224 @@
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">YourBusiness</div>
-            <ul class="nav-links">
+            <div class="logo">Gayajii Teacher Hub</div>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#why-choose-us">Why Us</a></li>
+                <li><a href="#about">About Us</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Transform Your Business</h1>
-            <p>We deliver exceptional results with proven strategies</p>
-            <a href="#services" class="cta-button">Explore Services</a>
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to Gayajii Teacher Hub</h1>
+                <p>Your trusted partner for quality education and teaching opportunities in Patna, Bihar</p>
+                <a href="#services" class="cta-button">Explore Our Services</a>
+            </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section id="why-choose-us" class="why-choose-us">
+    <!-- About Section -->
+    <section id="about">
         <div class="container">
-            <h2 class="section-title">Why Choose Us</h2>
-            <div class="why-grid">
-                <div class="why-card">
-                    <div class="why-icon">🚀</div>
-                    <h3>Proven Expertise</h3>
-                    <p>10+ years of industry experience delivering outstanding results for businesses of all sizes.</p>
+            <h2 class="section-title">About Us</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.9;">
+                At Gayajii Teacher Hub, we bridge the gap between talented teachers and eager students. 
+                Whether you're looking for home tuition, coaching center opportunities, or teaching jobs, 
+                we have the perfect solution for you.
+            </p>
+            <div class="about-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Home Tuition</h3>
+                    <p>Personalized one-on-one teaching at your doorstep for school students.</p>
                 </div>
-                <div class="why-card">
-                    <div class="why-icon">⭐</div>
-                    <h3>100% Satisfaction</h3>
-                    <p>Our clients love us! 5-star ratings and repeat business from satisfied customers.</p>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3>Coaching Center</h3>
+                    <p>Group classes in premium coaching centers for competitive exam preparation.</p>
                 </div>
-                <div class="why-card">
-                    <div class="why-icon">⚡</div>
-                    <h3>Fast Delivery</h3>
-                    <p>Quick turnaround times without compromising on quality. Results you can see fast.</p>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>School Tuition</h3>
+                    <p>Regular school teaching positions in reputed institutions across Bihar.</p>
                 </div>
-                <div class="why-card">
-                    <div class="why-icon">💰</div>
-                    <h3>Affordable Pricing</h3>
-                    <p>Premium services at competitive prices. Great value for your investment.</p>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Teaching Jobs</h3>
+                    <p>Part-time and full-time teaching opportunities with flexible schedules.</p>
                 </div>
-                <div class="why-card">
-                    <div class="why-icon">🔒</div>
-                    <h3>Secure & Reliable</h3>
-                    <p>Your data and projects are safe with us. Enterprise-grade security standards.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon">🎯</div>
-                    <h3>Results Driven</h3>
-                    <p>We focus on measurable outcomes that grow your business and ROI.</p>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Teacher Placement</h3>
+                    <p>We connect qualified teachers with students who need expert guidance.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section id="services">
         <div class="container">
             <h2 class="section-title">Our Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-number">01</div>
-                    <h3>Web Development</h3>
-                    <p>Custom websites and web applications built with modern technologies. Responsive, fast, and SEO optimized.</p>
+                    <div class="service-icon">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <h3>English Grammar</h3>
+                    <p>Spoken English, grammar, and communication skills for all levels.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-number">02</div>
-                    <h3>Digital Marketing</h3>
-                    <p>Complete digital marketing solutions including SEO, PPC, social media, and content marketing.</p>
+                    <div class="service-icon">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h3>Biology Tuition</h3>
+                    <p>12th-grade Biology and NEET preparation with expert teachers.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-number">03</div>
-                    <h3>Graphic Design</h3>
-                    <p>Professional branding, logos, marketing materials, and visual identity design.</p>
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Exam Preparation</h3>
+                    <p>Bihar Board and competitive exam preparation programs.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-number">04</div>
-                    <h3>Mobile Apps</h3>
-                    <p>Native and cross-platform mobile applications for iOS and Android.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-number">05</div>
-                    <h3>SEO & Analytics</h3>
-                    <p>Search engine optimization and analytics to drive traffic and conversions.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-number">06</div>
-                    <h3>Consulting</h3>
-                    <p>Business and technology consulting to help you make the right strategic decisions.</p>
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Job Placement</h3>
+                    <p>Guaranteed teaching job placements for qualified candidates.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact">
         <div class="container">
-            <h2 class="section-title">Ready to Get Started?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Contact us today for a free consultation</p>
-            <a href="mailto:hello@yourbusiness.com" class="cta-button" style="background: white; color: #667eea;">Get Free Quote</a>
+            <h2 class="section-title">Contact Us</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">
+                Ready to start your teaching journey or find the perfect tutor? Get in touch today!
+            </p>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2024 YourBusiness. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
+        <p>&copy; 2026 Gayajii Teacher Hub. All rights reserved. | Patna, Bihar</p>
     </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(0, 0, 0, 0.98)';
+            } else {
+                header.style.background = 'rgba(0, 0, 0, 0.95)';
+            }
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = document.getElementById('name').value;
+            
+            // Simple form submission simulation
+            alert(`Thank you, ${name}! Your message has been sent successfully. We'll get back to you soon.`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
