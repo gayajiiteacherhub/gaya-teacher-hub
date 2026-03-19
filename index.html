@@ -50,16 +50,19 @@
     .why-box h4 {margin-bottom:15px;color:#2c5aa0;font-size:20px;}
     .why-box p {color:#5a6c7d;}
     
-    /* Contact - WhatsApp Buttons */
-    .contact {background:#fff;}
-    .whatsapp-buttons {display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:40px;}
-    .whatsapp-btn {background:linear-gradient(45deg, #25D366, #128C7E);color:#fff;border:none;padding:18px 40px;font-weight:700;font-size:18px;cursor:pointer;transition:0.3s;border-radius:30px;box-shadow:0 8px 25px rgba(37,211,102,0.3);min-width:250px;}
-    .whatsapp-btn:hover {transform:translateY(-3px);box-shadow:0 12px 35px rgba(37,211,102,0.4);}
-    .whatsapp-btn i {margin-right:10px;}
+    /* Contact - ONLY WhatsApp Buttons (NO FORM) */
+    .contact {background:#fff;text-align:center;}
+    .whatsapp-buttons {display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin:40px 0;}
+    .whatsapp-btn {background:linear-gradient(45deg, #25D366, #128C7E);color:#fff;border:none;padding:20px 45px;font-weight:700;font-size:18px;cursor:pointer;transition:0.3s;border-radius:30px;box-shadow:0 10px 30px rgba(37,211,102,0.3);min-width:280px;}
+    .whatsapp-btn:hover {transform:translateY(-5px);box-shadow:0 15px 40px rgba(37,211,102,0.4);}
+    .whatsapp-btn i {margin-right:12px;font-size:20px;}
+    .contact h2 {margin-bottom:20px;}
+    .contact p {color:#5a6c7d;font-size:18px;margin-bottom:40px;}
     
-    .contact form {max-width:600px;margin:40px auto 0;display:flex;flex-direction:column;gap:15px;}
-    .contact input,.contact textarea {padding:15px;border-radius:8px;border:2px solid #ecf0f1;font-size:16px;transition:border 0.3s;background:#f8f9ff;}
-    .contact input:focus,.contact textarea:focus {outline:none;border-color:#3498db;}
+    /* Floating WhatsApp */
+    .floating-whatsapp {position:fixed;bottom:25px;right:25px;z-index:1000;}
+    .floating-main {width:60px;height:60px;background:linear-gradient(45deg, #25D366, #128C7E);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;box-shadow:0 8px 25px rgba(37,211,102,0.4);cursor:pointer;transition:all 0.3s;}
+    .floating-main:hover {transform:scale(1.1);}
     
     /* Footer */
     footer {background:#2c5aa0;color:#fff;text-align:center;padding:30px 10%;box-shadow:0 -2px 10px rgba(0,50,100,0.1);}
@@ -75,10 +78,12 @@
         .hero .tagline-hero {font-size:18px;}
         .services, .why {flex-direction:column;align-items:center;}
         .whatsapp-buttons {flex-direction:column;align-items:center;}
-        .whatsapp-btn {width:100%;max-width:300px;}
+        .whatsapp-btn {width:100%;max-width:320px;}
+        .floating-whatsapp {bottom:20px;right:20px;}
+        .floating-main {width:55px;height:55px;font-size:22px;}
     }
 </style>
-//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -114,34 +119,34 @@
 
 <!-- Services -->
 <section id="services">
-    <h2>Our Services</h2>
+    <h2>Our Services - Gaya Wide</h2>
     <div class="services">
         <div class="service-box">
             <i class="fas fa-home"></i>
             <h3>Home Tuition</h3>
-            <p>Personalized one-on-one tutoring at your home for Classes 1-12, all subjects.</p>
+            <p>Personalized one-on-one tutoring at your home for Classes 1-12, all subjects in Gaya.</p>
         </div>
         <div class="service-box">
             <i class="fas fa-chalkboard-teacher"></i>
             <h3>Coaching Jobs</h3>
-            <p>Immediate teaching opportunities in coaching centers for qualified teachers.</p>
+            <p>Immediate teaching opportunities in coaching centers across Gaya district.</p>
         </div>
         <div class="service-box">
             <i class="fas fa-university"></i>
             <h3>School Jobs</h3>
-            <p>Part-time & full-time teaching positions in schools across Gaya district.</p>
+            <p>Part-time & full-time teaching positions in Gaya schools.</p>
         </div>
     </div>
 </section>
 
 <!-- Why Choose Us -->
 <section id="why" class="why-section">
-    <h2>Why Choose Us</h2>
+    <h2>Why Choose Gayajii?</h2>
     <div class="why">
         <div class="why-box">
             <i class="fas fa-user-check"></i>
             <h4>Verified Teachers</h4>
-            <p>All teachers are experienced and verified for quality education.</p>
+            <p>All teachers are experienced and verified for quality education in Gaya.</p>
         </div>
         <div class="why-box">
             <i class="fas fa-clock"></i>
@@ -151,15 +156,15 @@
         <div class="why-box">
             <i class="fas fa-shield-alt"></i>
             <h4>Safe & Trusted</h4>
-            <p>100% safe platform connecting students and teachers securely.</p>
+            <p>100% safe platform connecting Gaya students and teachers securely.</p>
         </div>
     </div>
 </section>
 
-<!-- Contact -->
+<!-- Contact - ONLY WhatsApp Buttons -->
 <section class="contact" id="contact">
-    <h2>Ready to Connect?</h2>
-    <p style="text-align:center;color:#5a6c7d;font-size:18px;margin-bottom:30px;">Choose your requirement and WhatsApp us instantly!</p>
+    <h2>Ready to Connect? WhatsApp Now!</h2>
+    <p>Choose your requirement and connect instantly with Gayajii Teacher Hub, Gaya</p>
     
     <div class="whatsapp-buttons">
         <button class="whatsapp-btn" onclick="openWhatsAppStudent()">
@@ -171,20 +176,21 @@
             APPLY FOR TEACHING JOB
         </button>
     </div>
-    
-    <form style="margin-top:50px;">
-        <input type="text" placeholder="Your Name" required>
-        <input type="tel" placeholder="Your Phone" required>
-        <textarea placeholder="Tell us your requirements..." rows="5" required></textarea>
-        <button type="submit" style="background:#2c5aa0;color:#fff;">Send Message</button>
-    </form>
 </section>
+
+<!-- Floating WhatsApp -->
+<div class="floating-whatsapp">
+    <div class="floating-main" onclick="window.open('https://wa.me/919523701863', '_blank')" title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+</div>
 
 <!-- Footer -->
 <footer>
     <div style="font-size:18px;margin-bottom:10px;">Gayajii Teacher Hub</div>
     <div class="tagline">Connecting Teachers, Students and Opportunities</div>
-    <p>Gaya, Bihar | Classes 1-12 All Subjects | WhatsApp: <a href="https://wa.me/919523701863" style="color:#fff;font-weight:700;">919523701863</a></p>
+    <p>Serving Gaya District, Bihar | Classes 1-12 All Subjects<br>
+    WhatsApp: <a href="https://wa.me/919523701863" style="color:#fff;font-weight:700;">919523701863</a></p>
 </footer>
 
 <script>
