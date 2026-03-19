@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gayajii Teacher Hub - Gaya Bihar | Connecting,Teachers,Students and Opportunities</title>
+    <title>Gayajii Teacher Hub - Gaya Bihar | Classes 1-12 All Subjects</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -14,7 +14,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #0A0A1A 0%, #1a0a2e 100%);
             color: #fff;
             line-height: 1.6;
             overflow-x: hidden;
@@ -25,7 +25,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(10, 10, 26, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 0.5rem 0;
@@ -43,15 +43,23 @@
         .logo {
             height: 50px;
             width: 200px;
-            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            background: linear-gradient(45deg, #C084FC, #E879F9);
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
             font-weight: bold;
-            color: #000;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 15px rgba(192, 132, 252, 0.4);
+        }
+
+        .tagline {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            margin-top: 2px;
+            font-weight: 500;
         }
 
         .nav-links {
@@ -75,7 +83,7 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background: #ffd700;
+            background: linear-gradient(45deg, #C084FC, #E879F9);
             transition: width 0.3s ease;
         }
 
@@ -84,7 +92,8 @@
         }
 
         .nav-links a:hover {
-            color: #ffd700;
+            color: #E879F9;
+            text-shadow: 0 0 10px rgba(192, 132, 252, 0.5);
         }
 
         .hamburger {
@@ -97,7 +106,7 @@
         .hamburger span {
             width: 25px;
             height: 3px;
-            background: #ffd700;
+            background: linear-gradient(45deg, #C084FC, #E879F9);
             transition: 0.3s;
         }
 
@@ -115,15 +124,15 @@
         .fab-main, .fab-sub {
             width: 56px;
             height: 56px;
-            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            background: linear-gradient(45deg, #C084FC, #E879F9);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.4rem;
-            color: #000;
+            color: #fff;
             cursor: pointer;
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 8px 25px rgba(192, 132, 252, 0.5);
             transition: all 0.3s ease;
             border: none;
         }
@@ -131,11 +140,12 @@
         .fab-main {
             animation: pulse 2s infinite;
             font-size: 1.6rem;
+            box-shadow: 0 10px 30px rgba(192, 132, 252, 0.6);
         }
 
         .fab-main:hover, .fab-sub:hover {
             transform: scale(1.1);
-            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.6);
+            box-shadow: 0 15px 40px rgba(192, 132, 252, 0.8);
         }
 
         /* Sections */
@@ -144,7 +154,7 @@
             min-height: 100vh;
             background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+            border-bottom: 1px solid rgba(192, 132, 252, 0.2);
         }
 
         .container {
@@ -155,7 +165,7 @@
 
         /* Home */
         #home {
-            background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(26,26,26,0.95) 100%);
+            background: linear-gradient(135deg, rgba(10,10,26,0.95) 0%, rgba(26,10,46,0.95) 100%);
             text-align: center;
             display: flex;
             align-items: center;
@@ -164,11 +174,20 @@
 
         .hero-content h1 {
             font-size: 4rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #C084FC, #E879F9);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .hero-tagline {
+            font-size: 1.6rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: #E879F9;
+            text-shadow: 0 0 20px rgba(192, 132, 252, 0.5);
+            animation: glow 2s ease-in-out infinite alternate;
         }
 
         .hero-content p {
@@ -179,20 +198,20 @@
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(45deg, #ffd700, #ffed4a);
-            color: #000;
+            background: linear-gradient(45deg, #C084FC, #E879F9);
+            color: #fff;
             padding: 18px 50px;
             font-size: 1.3rem;
             font-weight: bold;
             text-decoration: none;
             border-radius: 50px;
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 10px 30px rgba(192, 132, 252, 0.5);
             transition: all 0.3s ease;
         }
 
         .cta-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+            box-shadow: 0 15px 40px rgba(192, 132, 252, 0.8);
         }
 
         /* About */
@@ -200,25 +219,28 @@
             font-size: 3rem;
             text-align: center;
             margin-bottom: 3rem;
-            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            background: linear-gradient(45deg, #C084FC, #E879F9);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .motive-section {
-            background: rgba(255, 215, 0, 0.1);
+            background: rgba(192, 132, 252, 0.15);
             padding: 3rem;
             border-radius: 20px;
             margin-bottom: 4rem;
-            border: 1px solid rgba(255, 215, 0, 0.3);
+            border: 1px solid rgba(192, 132, 252, 0.4);
             text-align: center;
         }
 
         .motive-section h3 {
             font-size: 2.2rem;
             margin-bottom: 1.5rem;
-            color: #ffd700;
+            background: linear-gradient(45deg, #C084FC, #E879F9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .about-grid, .services-grid {
@@ -229,23 +251,27 @@
         }
 
         .service-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.08);
             padding: 2.5rem;
             border-radius: 20px;
             text-align: center;
-            border: 1px solid rgba(255, 215, 0, 0.2);
+            border: 1px solid rgba(192, 132, 252, 0.3);
             transition: all 0.3s ease;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            background: rgba(255, 215, 0, 0.1);
-            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+            background: rgba(192, 132, 252, 0.12);
+            box-shadow: 0 20px 40px rgba(192, 132, 252, 0.4);
+            border-color: rgba(192, 132, 252, 0.6);
         }
 
         .service-icon {
             font-size: 3.5rem;
-            color: #ffd700;
+            background: linear-gradient(45deg, #C084FC, #E879F9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 1rem;
         }
 
@@ -258,8 +284,8 @@
         }
 
         .action-btn {
-            background: linear-gradient(45deg, #ffd700, #ffed4a);
-            color: #000;
+            background: linear-gradient(45deg, #C084FC, #E879F9);
+            color: #fff;
             padding: 25px;
             border-radius: 20px;
             border: none;
@@ -267,7 +293,7 @@
             font-size: 1.2rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 10px 30px rgba(192, 132, 252, 0.5);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -281,7 +307,7 @@
 
         .action-btn:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(255, 215, 0, 0.6);
+            box-shadow: 0 20px 50px rgba(192, 132, 252, 0.8);
         }
 
         /* Contact */
@@ -300,10 +326,11 @@
             width: 100%;
             padding: 18px;
             background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 215, 0, 0.3);
+            border: 2px solid rgba(192, 132, 252, 0.4);
             border-radius: 12px;
             color: #fff;
             font-size: 1.1rem;
+            transition: all 0.3s ease;
         }
 
         .form-group input::placeholder,
@@ -315,35 +342,36 @@
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: #ffd700;
-            background: rgba(255, 215, 0, 0.1);
+            border-color: #C084FC;
+            background: rgba(192, 132, 252, 0.15);
+            box-shadow: 0 0 20px rgba(192, 132, 252, 0.3);
         }
 
         .submit-btn {
             width: 100%;
-            background: linear-gradient(45deg, #ffd700, #ffed4a);
-            color: #000;
+            background: linear-gradient(45deg, #C084FC, #E879F9);
+            color: #fff;
             padding: 20px;
             font-size: 1.3rem;
             font-weight: bold;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            box-shadow: 0 10px 30px rgba(192, 132, 252, 0.5);
             transition: all 0.3s ease;
         }
 
         .submit-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+            box-shadow: 0 15px 40px rgba(192, 132, 252, 0.8);
         }
 
         /* Footer */
         footer {
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(10, 10, 26, 0.95);
             text-align: center;
             padding: 3rem 2rem;
-            border-top: 2px solid #ffd700;
+            border-top: 2px solid rgba(192, 132, 252, 0.5);
         }
 
         .social-links {
@@ -354,19 +382,26 @@
         }
 
         .social-links a {
-            color: #ffd700;
+            color: #C084FC;
             font-size: 2rem;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .social-links a:hover {
+            color: #E879F9;
             transform: scale(1.3);
+            text-shadow: 0 0 15px rgba(192, 132, 252, 0.7);
         }
 
         /* Animations */
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(192, 132, 252, 0.5); }
+            to { text-shadow: 0 0 30px rgba(192, 132, 252, 0.8), 0 0 40px rgba(232, 121, 249, 0.5); }
         }
 
         @keyframes fadeInUp {
@@ -383,7 +418,7 @@
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 70px);
-                background: rgba(0,0,0,0.98);
+                background: rgba(10,10,26,0.98);
                 flex-direction: column;
                 align-items: center;
                 padding-top: 2rem;
@@ -392,7 +427,9 @@
             .nav-links.active { left: 0; }
             
             .logo { height: 40px; font-size: 1rem; width: 160px; }
+            .tagline { font-size: 0.7rem; }
             .hero-content h1 { font-size: 2.5rem; }
+            .hero-tagline { font-size: 1.3rem; }
             .section-title { font-size: 2rem; }
             .fab-container { bottom: 20px; right: 20px; }
             .fab-main, .fab-sub { width: 50px; height: 50px; font-size: 1.2rem; }
@@ -406,7 +443,10 @@
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">Gayajii Teacher Hub</div>
+            <div class="logo">
+                Gayajii Teacher Hub
+                <div class="tagline">Connecting Teachers, Students and Opportunities</div>
+            </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -424,6 +464,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Gayajii Teacher Hub</h1>
+                <div class="hero-tagline">Connecting Teachers, Students and Opportunities</div>
                 <p>Classes 1 to 12 | All Subjects | Gaya, Bihar</p>
                 <a href="#about" class="cta-button">Find Your Teacher Now</a>
             </div>
@@ -436,8 +477,8 @@
             <h2 class="section-title">About Us</h2>
             
             <div class="motive-section">
-                <h3>🌟 Our Mission</h3>
-                <p>We connect <strong>Classes 1-12 students</strong> with <strong>expert teachers</strong> for home tuition, coaching centers, and school jobs in Gaya, Bihar. All subjects covered!</p>
+                <h3>🌟 Connecting Teachers, Students and Opportunities</h3>
+                <p>We bridge the gap between <strong>Classes 1-12 students</strong> seeking expert guidance and <strong>qualified teachers</strong> looking for rewarding opportunities in Gaya, Bihar. All subjects covered!</p>
             </div>
 
             <div class="about-grid">
@@ -568,7 +609,8 @@
             <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
         <p>© 2026 Gayajii Teacher Hub | Gaya, Bihar | Classes 1-12 All Subjects<br>
-        <a href="https://wa.me/919523701863" style="color:#ffd700;">WhatsApp: 919523701863</a></p>
+        <strong>Connecting Teachers, Students and Opportunities</strong><br>
+        <a href="https://wa.me/919523701863" style="color:#C084FC;">WhatsApp: 919523701863</a></p>
     </footer>
 
     <script>
@@ -613,7 +655,7 @@
             
             let text = `Hi Gayajii Teacher Hub! 👋%0A%0A${service.toUpperCase()}%0AName: ${name}%0APhone: ${phone}`;
             if (msg) text += `%0AMessage: ${msg}`;
-            text += '%0A%0AGaya, Bihar';
+            text += '%0A%0AGaya,%20Bihar%20-%20Connecting%20Teachers,%20Students%20and%20Opportunities';
             
             window.open(`https://wa.me/919523701863?text=${text}`, '_blank');
             e.target.reset();
