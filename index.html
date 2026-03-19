@@ -1,143 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gayajii Teacher Hub</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gayajii Teacher Hub</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #000;
-  color: #fff;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-/* HEADER */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 20px;
-  background: #111;
-}
+    body {
+      background-color: #000;
+      color: #fff;
+    }
 
-/* LOGO */
-.logo {
-  display: flex;
-  align-items: center;
-}
+    /* NAVBAR */
+    header {
+      background: #000;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #FFD700;
+      position: sticky;
+      top: 0;
+    }
 
-.logo img {
-  height: 50px;
-  width: auto;
-}
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #FFD700;
+    }
 
-/* NAVBAR */
-nav a {
-  color: #FFD700;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: bold;
-}
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s;
+    }
 
-nav a:hover {
-  text-decoration: underline;
-}
+    nav a:hover {
+      color: #FFD700;
+    }
 
-/* SECTIONS */
-.section {
-  padding: 40px 20px;
-  text-align: center;
-}
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
 
-/* BUTTON */
-.btn {
-  background: #FFD700;
-  color: #000;
-  padding: 12px 20px;
-  margin: 10px;
-  display: inline-block;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-}
+    .hero h1 {
+      font-size: 40px;
+      color: #FFD700;
+    }
 
-.btn:hover {
-  background: #e6c200;
-}
+    .hero p {
+      margin: 20px 0;
+      font-size: 18px;
+    }
 
-/* MOBILE */
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-  }
+    .btn {
+      background: #FFD700;
+      color: #000;
+      padding: 12px 25px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
 
-  nav {
-    margin-top: 10px;
-  }
+    .btn:hover {
+      background: #e6c200;
+    }
 
-  .logo img {
-    height: 40px;
-  }
+    /* SECTIONS */
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
 
-  .btn {
-    display: block;
-    width: 80%;
-    margin: 10px auto;
-  }
-}
-</style>
+    h2 {
+      color: #FFD700;
+      margin-bottom: 20px;
+    }
+
+    /* SERVICES */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #111;
+      padding: 20px;
+      border: 1px solid #FFD700;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* WHY CHOOSE US */
+    .why {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .why div {
+      background: #111;
+      padding: 20px;
+      border-left: 4px solid #FFD700;
+    }
+
+    /* CONTACT */
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: auto;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #FFD700;
+      margin-top: 40px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 600px) {
+      .hero h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
-  <div class="logo">
-    <!-- 🔥 PUT YOUR LOGO IMAGE LINK BELOW -->
-    <img src="logo.png" alt="Logo">
-  </div>
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo">Gayajii Teacher Hub</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About Us</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact Us</a>
-  </nav>
-</header>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <h1>Find the Best Teachers Near You</h1>
+    <p>Home Tuition | Coaching | School Jobs | Teacher Hiring</p>
+    <button class="btn" onclick="scrollToSection('contact')">Get Started</button>
+  </section>
 
-<!-- HOME -->
-<div id="home" class="section">
-  <h1>Gayajii Teacher Hub</h1>
-  <p>Connecting Students with Best Teachers in Gaya</p>
+  <!-- SERVICES -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Home Tuition</h3>
+        <p>Get experienced teachers at your home.</p>
+      </div>
 
-  <a href="https://wa.me/91XXXXXXXXXX" class="btn">Find a Teacher</a>
-  <a href="#contact" class="btn">Apply as Teacher</a>
-</div>
+      <div class="card">
+        <h3>Coaching Classes</h3>
+        <p>Join professional coaching centers.</p>
+      </div>
 
-<!-- ABOUT -->
-<div id="about" class="section">
-  <h2>About Us</h2>
-  <p>We provide home tuition, coaching classes, and teacher jobs in Gaya.</p>
-</div>
+      <div class="card">
+        <h3>Teacher Hiring</h3>
+        <p>We provide qualified teachers to students.</p>
+      </div>
 
-<!-- SERVICES -->
-<div id="services" class="section">
-  <h2>Our Services</h2>
-  <p>Home Tuition</p>
-  <p>Coaching Centre</p>
-  <p>School Teacher Jobs</p>
-  <p>Part-time & Full-time Teaching</p>
-</div>
+      <div class="card">
+        <h3>School Jobs</h3>
+        <p>Find part-time & full-time teaching jobs.</p>
+      </div>
+    </div>
+  </section>
 
-<!-- CONTACT -->
-<div id="contact" class="section">
-  <h2>Contact Us</h2>
+  <!-- WHY CHOOSE US -->
+  <section id="why">
+    <h2>Why Choose Us</h2>
+    <div class="why">
+      <div>
+        <h3>Verified Teachers</h3>
+        <p>We provide trusted and experienced teachers.</p>
+      </div>
 
-  <a href="tel:+91XXXXXXXXXX" class="btn">Call Now</a>
-  <a href="https://wa.me/91XXXXXXXXXX" class="btn">WhatsApp</a>
-</div>
+      <div>
+        <h3>Affordable Fees</h3>
+        <p>Quality education at reasonable prices.</p>
+      </div>
+
+      <div>
+        <h3>Quick Service</h3>
+        <p>Get teachers assigned within short time.</p>
+      </div>
+
+      <div>
+        <h3>All-in-One Platform</h3>
+        <p>Students, teachers & schools — everything in one place.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form onsubmit="submitForm(event)">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button class="btn">Send</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Gayajii Teacher Hub | All Rights Reserved</p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+
+    function submitForm(e) {
+      e.preventDefault();
+      alert("Message Sent Successfully!");
+    }
+  </script>
 
 </body>
 </html>
