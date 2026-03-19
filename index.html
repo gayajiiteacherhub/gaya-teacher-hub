@@ -1,111 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Gayajii Teacher Hub</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gayajii Teacher Hub</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      text-align: center;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+}
 
-    header {
-      background: #007bff;
-      color: white;
-      padding: 20px;
-    }
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: #111;
+}
 
-    h1 {
-      margin: 0;
-    }
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+}
 
-    .container {
-      padding: 20px;
-    }
+.logo img {
+  height: 50px;
+  width: auto;
+}
 
-    .btn {
-      display: inline-block;
-      background: #007bff;
-      color: white;
-      padding: 12px 20px;
-      margin: 10px;
-      text-decoration: none;
-      border-radius: 8px;
-    }
+/* NAVBAR */
+nav a {
+  color: #FFD700;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
 
-    .btn:hover {
-      background: #0056b3;
-    }
+nav a:hover {
+  text-decoration: underline;
+}
 
-    .section {
-      background: white;
-      margin: 15px;
-      padding: 20px;
-      border-radius: 10px;
-    }
+/* SECTIONS */
+.section {
+  padding: 40px 20px;
+  text-align: center;
+}
 
-    footer {
-      background: #222;
-      color: white;
-      padding: 15px;
-      margin-top: 20px;
-    }
+/* BUTTON */
+.btn {
+  background: #FFD700;
+  color: #000;
+  padding: 12px 20px;
+  margin: 10px;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
 
-    /* Mobile Responsive */
-    @media (max-width: 600px) {
-      .btn {
-        display: block;
-        width: 80%;
-        margin: 10px auto;
-      }
-    }
-  </style>
+.btn:hover {
+  background: #e6c200;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .btn {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+  }
+}
+</style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-  <h1>Gayajii Teacher Hub</h1>
-  <p>Find Best Teachers in Gaya</p>
+  <div class="logo">
+    <!-- 🔥 PUT YOUR LOGO IMAGE LINK BELOW -->
+    <img src="logo.png" alt="Logo">
+  </div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
 </header>
 
-<div class="container">
+<!-- HOME -->
+<div id="home" class="section">
+  <h1>Gayajii Teacher Hub</h1>
+  <p>Connecting Students with Best Teachers in Gaya</p>
 
-  <div class="section">
-    <h2>Get a Teacher in 24 Hours</h2>
-    <a href="https://wa.me/91XXXXXXXXXX" class="btn">Find a Teacher</a>
-    <a href="https://wa.me/91XXXXXXXXXX" class="btn">Apply as Teacher</a>
-  </div>
-
-  <div class="section">
-    <h2>Our Services</h2>
-    <p>Home Tuition</p>
-    <p>Coaching Classes</p>
-    <p>School Teacher Jobs</p>
-    <p>Part-time & Full-time Teaching</p>
-  </div>
-
-  <div class="section">
-    <h2>Why Choose Us</h2>
-    <p>✔ Verified Teachers</p>
-    <p>✔ Affordable Fees</p>
-    <p>✔ Fast Service</p>
-  </div>
-
-  <div class="section">
-    <h2>Contact Us</h2>
-    <a href="tel:+91XXXXXXXXXX" class="btn">Call Now</a>
-    <a href="https://wa.me/91XXXXXXXXXX" class="btn">WhatsApp</a>
-  </div>
-
+  <a href="https://wa.me/91XXXXXXXXXX" class="btn">Find a Teacher</a>
+  <a href="#contact" class="btn">Apply as Teacher</a>
 </div>
 
-<footer>
-  <p>© 2026 Gayajii Teacher Hub</p>
-</footer>
+<!-- ABOUT -->
+<div id="about" class="section">
+  <h2>About Us</h2>
+  <p>We provide home tuition, coaching classes, and teacher jobs in Gaya.</p>
+</div>
+
+<!-- SERVICES -->
+<div id="services" class="section">
+  <h2>Our Services</h2>
+  <p>Home Tuition</p>
+  <p>Coaching Centre</p>
+  <p>School Teacher Jobs</p>
+  <p>Part-time & Full-time Teaching</p>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="section">
+  <h2>Contact Us</h2>
+
+  <a href="tel:+91XXXXXXXXXX" class="btn">Call Now</a>
+  <a href="https://wa.me/91XXXXXXXXXX" class="btn">WhatsApp</a>
+</div>
 
 </body>
 </html>
