@@ -1,124 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gayajii Teacher Hub</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gaya Ji Teacher Hub</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
 
-    body {
-      background: #000;
-      color: #fff;
-    }
+body{
+  background:linear-gradient(135deg,#000,#111);
+  color:#fff;
+  overflow-x:hidden;
+}
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      padding: 15px 30px;
-      border-bottom: 2px solid #FFD700;
-      position: sticky;
-      top: 0;
-      background: #000;
-    }
+/* NAVBAR */
+header{
+  display:flex;
+  justify-content:space-between;
+  padding:15px 40px;
+  border-bottom:1px solid rgba(255,215,0,0.3);
+  backdrop-filter:blur(10px);
+}
 
-    .logo {
-      color: #FFD700;
-      font-size: 22px;
-      font-weight: bold;
-    }
+.logo{
+  font-size:22px;
+  font-weight:bold;
+  color:#FFD700;
+  text-shadow:0 0 10px #FFD700;
+}
 
-    nav a {
-      color: #fff;
-      margin-left: 20px;
-      text-decoration: none;
-    }
+/* NAV */
+nav a{
+  margin-left:25px;
+  color:#fff;
+  text-decoration:none;
+  transition:0.3s;
+}
 
-    nav a:hover {
-      color: #FFD700;
-    }
+nav a:hover{
+  color:#FFD700;
+}
 
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-    }
+/* HERO */
+.hero{
+  text-align:center;
+  padding:100px 20px;
+}
 
-    .hero h1 {
-      color: #FFD700;
-      font-size: 40px;
-    }
+.hero h1{
+  font-size:42px;
+  color:#FFD700;
+  text-shadow:0 0 15px #FFD700;
+}
 
-    .btn {
-      background: #FFD700;
-      color: #000;
-      padding: 12px 25px;
-      border: none;
-      margin: 10px;
-      cursor: pointer;
-      border-radius: 5px;
-      font-weight: bold;
-    }
+.tagline{
+  margin-top:10px;
+  letter-spacing:3px;
+  color:#ccc;
+}
 
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
+/* BUTTONS */
+.btn{
+  margin:15px;
+  padding:12px 25px;
+  background:#FFD700;
+  border:none;
+  cursor:pointer;
+  border-radius:30px;
+  font-weight:bold;
+  transition:0.3s;
+}
 
-    h2 {
-      color: #FFD700;
-      margin-bottom: 20px;
-    }
+.btn:hover{
+  box-shadow:0 0 20px #FFD700;
+  transform:scale(1.05);
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+/* SECTION */
+section{
+  padding:60px 20px;
+  text-align:center;
+}
 
-    .card {
-      background: #111;
-      padding: 20px;
-      border: 1px solid #FFD700;
-      border-radius: 10px;
-    }
+h2{
+  color:#FFD700;
+  margin-bottom:30px;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      border-top: 1px solid #FFD700;
-    }
-  </style>
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#111;
+  padding:20px;
+  border-radius:10px;
+  border:1px solid rgba(255,215,0,0.3);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 15px rgba(255,215,0,0.3);
+}
+
+/* FORM */
+input, textarea{
+  width:90%;
+  padding:10px;
+  margin:8px;
+  border:none;
+  border-radius:5px;
+}
+
+/* FOOTER */
+footer{
+  border-top:1px solid rgba(255,215,0,0.3);
+  padding:20px;
+  text-align:center;
+}
+
+/* ANIMATION */
+.fade{
+  opacity:0;
+  transform:translateY(30px);
+  transition:0.8s;
+}
+
+.show{
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">Gayajii Teacher Hub</div>
+  <div class="logo">🎓 Gaya Ji Teacher Hub</div>
   <nav>
     <a href="#home">Home</a>
     <a href="#services">Services</a>
-    <a href="#why">Why Us</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <!-- HERO -->
-<section id="home" class="hero">
-  <h1>Find the Best Teachers Near You</h1>
-  <p>Home Tuition | Coaching | School Jobs</p>
+<section class="hero fade" id="home">
+  <h1>Connecting Students, Teachers & Opportunities</h1>
+  <p class="tagline">Your Trusted Platform in Gaya</p>
 
-  <button class="btn" onclick="goToWhatsAppStudent()">Find Teacher</button>
-  <button class="btn" onclick="goToWhatsAppTeacher()">Apply as Teacher</button>
+  <button class="btn" onclick="goStudent()">Find Teacher</button>
+  <button class="btn" onclick="goTeacher()">Apply as Teacher</button>
 </section>
 
 <!-- SERVICES -->
-<section id="services">
+<section id="services" class="fade">
   <h2>Our Services</h2>
   <div class="grid">
     <div class="card">Home Tuition</div>
@@ -128,9 +174,96 @@
   </div>
 </section>
 
-<!-- WHY US -->
-<section id="why">
-  <h2>Why Choose Us</h2>
-  <div class="grid">
-    <div class="card">Verified Teachers</div>
-    <div class="card">Affordable Fees</
+<!-- CONTACT -->
+<section id="contact" class="fade">
+  <h2>Get Started</h2>
+
+  <input type="text" id="name" placeholder="Name">
+  <input type="text" id="phone" placeholder="Phone">
+
+  <input type="text" id="class" placeholder="Class / Qualification">
+  <input type="text" id="subject" placeholder="Subject">
+
+  <input type="text" id="area" placeholder="Area in Gaya">
+  <input type="text" id="budget" placeholder="Budget / Expected Salary">
+
+  <br>
+
+  <button class="btn" onclick="studentMsg()">Find Teacher</button>
+  <button class="btn" onclick="teacherMsg()">Apply as Teacher</button>
+</section>
+
+<footer>
+  © 2026 Gaya Ji Teacher Hub
+</footer>
+
+<script>
+let number="919523701863";
+
+/* HERO BUTTONS */
+function goStudent(){
+  let text="Hello, I am looking for a teacher in Gaya. Please assist me.";
+  window.open(`https://wa.me/${number}?text=${encodeURIComponent(text)}`);
+}
+
+function goTeacher(){
+  let text="Hello, I want to apply as a teacher in Gaya. Please guide me.";
+  window.open(`https://wa.me/${number}?text=${encodeURIComponent(text)}`);
+}
+
+/* FORM */
+function studentMsg(){
+  let name=document.getElementById("name").value;
+  let phone=document.getElementById("phone").value;
+  let cls=document.getElementById("class").value;
+  let subject=document.getElementById("subject").value;
+  let area=document.getElementById("area").value;
+  let budget=document.getElementById("budget").value;
+
+  let text=`Student Request:
+Name: ${name}
+Phone: ${phone}
+Class: ${cls}
+Subject: ${subject}
+Area: ${area}
+Budget: ${budget}`;
+
+  window.open(`https://wa.me/${number}?text=${encodeURIComponent(text)}`);
+}
+
+function teacherMsg(){
+  let name=document.getElementById("name").value;
+  let phone=document.getElementById("phone").value;
+  let qual=document.getElementById("class").value;
+  let subject=document.getElementById("subject").value;
+  let area=document.getElementById("area").value;
+  let salary=document.getElementById("budget").value;
+
+  let text=`Teacher Application:
+Name: ${name}
+Phone: ${phone}
+Qualification: ${qual}
+Subjects: ${subject}
+Area: ${area}
+Expected Salary: ${salary}
+
+Please attach your resume while sending this message.`;
+
+  window.open(`https://wa.me/${number}?text=${encodeURIComponent(text)}`);
+}
+
+/* SCROLL ANIMATION */
+let elements=document.querySelectorAll(".fade");
+
+window.addEventListener("scroll",()=>{
+  elements.forEach(el=>{
+    let pos=el.getBoundingClientRect().top;
+    if(pos<window.innerHeight-100){
+      el.classList.add("show");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
