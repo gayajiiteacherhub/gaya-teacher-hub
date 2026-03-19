@@ -1,256 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gayajii Teacher Hub</title>
-    <style>
-        /* Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-
-        body {
-            line-height: 1.6;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* Header */
-        header {
-            background-color: #000;
-            color: #FFD700; /* classy gold/yellow */
-            padding: 20px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            font-size: 28px;
-            letter-spacing: 1px;
-        }
-
-        nav a {
-            margin-left: 20px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #fff;
-        }
-
-        /* Hero Section */
-        .hero {
-            background-color: #1a1a1a;
-            color: #fff;
-            text-align: center;
-            padding: 80px 10%;
-        }
-
-        .hero h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-
-        .hero button {
-            background-color: #FFD700;
-            color: #000;
-            border: none;
-            padding: 12px 25px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .hero button:hover {
-            background-color: #e6c200;
-        }
-
-        /* Sections */
-        section {
-            padding: 60px 10%;
-        }
-
-        section h2 {
-            text-align: center;
-            font-size: 30px;
-            margin-bottom: 40px;
-            color: #000;
-        }
-
-        /* About Section */
-        .about p {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 18px;
-            color: #555;
-        }
-
-        /* Services Section */
-        .services {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .service-box {
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 30px;
-            width: 280px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .service-box:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-box h3 {
-            margin-bottom: 15px;
-            color: #000;
-        }
-
-        .service-box p {
-            color: #555;
-        }
-
-        /* Contact Section */
-        .contact form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .contact input, .contact textarea {
-            padding: 12px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
-
-        .contact button {
-            background-color: #000;
-            color: #FFD700;
-            border: none;
-            padding: 12px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .contact button:hover {
-            background-color: #333;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #000;
-            color: #FFD700;
-            text-align: center;
-            padding: 20px 10%;
-        }
-
-        /* Responsive */
-        @media(max-width: 768px){
-            .services {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            nav {
-                margin-top: 10px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gayajii Teacher Hub</title>
+<style>
+    /* Global Styles */
+    * {margin:0;padding:0;box-sizing:border-box;font-family:'Arial', sans-serif;}
+    body {background:#111;color:#fff;line-height:1.6;scroll-behavior:smooth;}
+    a {text-decoration:none;color:inherit;}
+    
+    /* Header */
+    header {position:fixed;width:100%;top:0;left:0;background:#000;z-index:1000;padding:15px 10%;display:flex;justify-content:space-between;align-items:center;}
+    header h1 {color:#FFD700;font-size:26px;}
+    nav a {margin-left:20px;font-weight:bold;transition:color 0.3s;}
+    nav a:hover {color:#fff;}
+    
+    /* Hero Section */
+    .hero {background:#1a1a1a url('') no-repeat center/cover;text-align:center;padding:120px 10% 80px;}
+    .hero h2 {font-size:40px;margin-bottom:20px;color:#FFD700;}
+    .hero p {font-size:18px;margin-bottom:30px;color:#ccc;}
+    .hero button {background:#FFD700;color:#000;border:none;padding:12px 25px;font-weight:bold;cursor:pointer;transition:0.3s;}
+    .hero button:hover {background:#e6c200;}
+    
+    /* Sections */
+    section {padding:80px 10%;opacity:0;transform:translateY(50px);transition:1s;}
+    section.visible {opacity:1;transform:translateY(0);}
+    section h2 {text-align:center;font-size:32px;margin-bottom:50px;color:#FFD700;}
+    
+    /* About */
+    .about p {max-width:800px;margin:0 auto;text-align:center;color:#ccc;font-size:18px;}
+    
+    /* Services */
+    .services {display:flex;flex-wrap:wrap;justify-content:space-around;gap:20px;}
+    .service-box {background:#000;border-radius:10px;padding:30px;width:280px;box-shadow:0 4px 15px rgba(0,0,0,0.5);transition:transform 0.3s, box-shadow 0.3s;}
+    .service-box:hover {transform:translateY(-10px);box-shadow:0 6px 20px rgba(255,215,0,0.3);}
+    .service-box h3 {margin-bottom:15px;color:#FFD700;}
+    .service-box p {color:#ccc;}
+    
+    /* Why Choose Us */
+    .why {display:flex;flex-wrap:wrap;justify-content:space-around;gap:20px;}
+    .why-box {background:#1a1a1a;border-radius:10px;padding:25px;width:250px;text-align:center;transition:transform 0.3s;}
+    .why-box:hover {transform:scale(1.05);}
+    .why-box h4 {margin-bottom:10px;color:#FFD700;}
+    .why-box p {color:#ccc;}
+    
+    /* Contact */
+    .contact form {max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:15px;}
+    .contact input,.contact textarea {padding:12px;border-radius:5px;border:none;font-size:16px;}
+    .contact button {background:#FFD700;color:#000;border:none;padding:12px;font-weight:bold;cursor:pointer;transition:0.3s;}
+    .contact button:hover {background:#e6c200;}
+    
+    /* Footer */
+    footer {background:#000;color:#FFD700;text-align:center;padding:25px 10%;margin-top:40px;}
+    
+    /* Responsive */
+    @media(max-width:768px){
+        .services, .why {flex-direction:column;align-items:center;}
+        header {flex-direction:column;align-items:flex-start;}
+        nav {margin-top:10px;}
+    }
+</style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>Gayajii Teacher Hub</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+<!-- Header -->
+<header>
+    <h1>Gayajii Teacher Hub</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h2>Your Trusted Partner in Education</h2>
-        <p>Connecting students with the best teachers for home tuition, coaching, and school support.</p>
-        <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Us</button>
-    </section>
+<!-- Hero -->
+<section class="hero">
+    <h2>Your Trusted Partner in Education</h2>
+    <p>Connecting students with top teachers for home tuition, coaching, and school support.</p>
+    <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Us</button>
+</section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <h2>About Us</h2>
-        <p>At Gayajii Teacher Hub, we strive to provide high-quality education services. 
-        Our experienced teachers offer personalized attention, home tutoring, school support, and coaching for all subjects and grades. 
-        We aim to make learning simple, effective, and enjoyable for every student.</p>
-    </section>
+<!-- About -->
+<section class="about" id="about">
+    <h2>About Us</h2>
+    <p>Gayajii Teacher Hub offers high-quality, personalized education services. Our experienced teachers help students excel in academics through home tuition, school support, and coaching for all grades and subjects. Learning is made effective, enjoyable, and simple!</p>
+</section>
 
-    <!-- Services Section -->
-    <section class="services-section" id="services">
-        <h2>Our Services</h2>
-        <div class="services">
-            <div class="service-box">
-                <h3>Home Tuition</h3>
-                <p>One-on-one tutoring at your home for a personalized learning experience.</p>
-            </div>
-            <div class="service-box">
-                <h3>Coaching Centre</h3>
-                <p>Professional coaching for competitive exams and school subjects.</p>
-            </div>
-            <div class="service-box">
-                <h3>School Support</h3>
-                <p>Part-time or full-time teachers for schools and academic institutions.</p>
-            </div>
+<!-- Services -->
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="service-box">
+            <h3>Home Tuition</h3>
+            <p>Personalized one-on-one tutoring at your home for better understanding and performance.</p>
         </div>
-    </section>
+        <div class="service-box">
+            <h3>Coaching Centre</h3>
+            <p>Professional coaching for competitive exams and school subjects by expert teachers.</p>
+        </div>
+        <div class="service-box">
+            <h3>School Support</h3>
+            <p>Part-time or full-time teaching solutions for schools and institutions.</p>
+        </div>
+    </div>
+</section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+<!-- Why Choose Us -->
+<section id="why">
+    <h2>Why Choose Us</h2>
+    <div class="why">
+        <div class="why-box">
+            <h4>Experienced Teachers</h4>
+            <p>Our teachers have years of experience and proven success.</p>
+        </div>
+        <div class="why-box">
+            <h4>Flexible Learning</h4>
+            <p>Home tuition and coaching that fits your schedule and pace.</p>
+        </div>
+        <div class="why-box">
+            <h4>Trusted & Safe</h4>
+            <p>We ensure a safe and trusted environment for all students.</p>
+        </div>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        &copy; 2026 Gayajii Teacher Hub. All Rights Reserved.
-    </footer>
+<!-- Contact -->
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<!-- Footer -->
+<footer>
+    &copy; 2026 Gayajii Teacher Hub. All Rights Reserved.
+</footer>
+
+<script>
+    // Scroll animation for sections
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {threshold:0.1});
+
+    sections.forEach(section => observer.observe(section));
+</script>
 
 </body>
 </html>
