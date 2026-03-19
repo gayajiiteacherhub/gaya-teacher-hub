@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gayajii Teacher Hub - Best Tuition & Teaching Services in Patna</title>
-    //cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Gayajii Teacher Hub - Gaya Bihar | Connecting,Teachers,Students and Opportunities
+</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -29,7 +30,6 @@
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 0.5rem 0;
-            transition: all 0.3s ease;
         }
 
         nav {
@@ -43,14 +43,16 @@
 
         .logo {
             height: 50px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .logo img {
-            height: 100%;
-            width: 100%;
-            object-fit: contain;
+            width: 200px;
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #000;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .nav-links {
@@ -63,9 +65,8 @@
             color: #fff;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
             position: relative;
-            font-size: 1rem;
         }
 
         .nav-links a::after {
@@ -75,7 +76,7 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            background: #ffd700;
             transition: width 0.3s ease;
         }
 
@@ -84,7 +85,7 @@
         }
 
         .nav-links a:hover {
-            color: #ffd700 !important;
+            color: #ffd700;
         }
 
         .hamburger {
@@ -101,7 +102,7 @@
             transition: 0.3s;
         }
 
-        /* Floating Action Buttons */
+        /* Floating WhatsApp Buttons */
         .fab-container {
             position: fixed;
             bottom: 30px;
@@ -109,62 +110,532 @@
             z-index: 1001;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
+        }
+
+        .fab-main, .fab-sub {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #000;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+            transition: all 0.3s ease;
+            border: none;
         }
 
         .fab-main {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, #ffd700, #ffed4a);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: #000;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
-            transition: all 0.3s ease;
             animation: pulse 2s infinite;
+            font-size: 1.6rem;
         }
 
-        .fab-main:hover {
+        .fab-main:hover, .fab-sub:hover {
             transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.6);
         }
 
-        .fab-sub {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(45deg, #ffd700, #ffed4a);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: #000;
-            cursor: pointer;
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: scale(0) translateY(20px);
-        }
-
-        .fab-sub.active {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-        }
-
-        /* Main Sections */
+        /* Sections */
         section {
             padding: 100px 0;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
             background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 215, 0, 0.1);
         }
 
         .container {
-            max
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Home */
+        #home {
+            background: linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(26,26,26,0.95) 100%);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            color: #000;
+            padding: 18px 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+        }
+
+        /* About */
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .motive-section {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 3rem;
+            border-radius: 20px;
+            margin-bottom: 4rem;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            text-align: center;
+        }
+
+        .motive-section h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #ffd700;
+        }
+
+        .about-grid, .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 215, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            color: #ffd700;
+            margin-bottom: 1rem;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .action-btn {
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            color: #000;
+            padding: 25px;
+            border-radius: 20px;
+            border: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .action-btn i {
+            font-size: 3rem;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(255, 215, 0, 0.6);
+        }
+
+        /* Contact */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 12px;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #ffd700;
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            color: #000;
+            padding: 20px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.95);
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 2px solid #ffd700;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: #ffd700;
+            font-size: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.3);
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-links {
+                position: fixed;
+                top: 100%;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(0,0,0,0.98);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 2rem;
+                transition: left 0.3s ease;
+            }
+            .nav-links.active { left: 0; }
+            
+            .logo { height: 40px; font-size: 1rem; width: 160px; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+            .fab-container { bottom: 20px; right: 20px; }
+            .fab-main, .fab-sub { width: 50px; height: 50px; font-size: 1.2rem; }
+            .action-buttons { grid-template-columns: 1fr; }
+        }
+
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Gayajii Teacher Hub</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home -->
+    <section id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Gayajii Teacher Hub</h1>
+                <p>Classes 1 to 12 | All Subjects | Gaya, Bihar</p>
+                <a href="#about" class="cta-button">Find Your Teacher Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            
+            <div class="motive-section">
+                <h3>🌟 Our Mission</h3>
+                <p>We connect <strong>Classes 1-12 students</strong> with <strong>expert teachers</strong> for home tuition, coaching centers, and school jobs in Gaya, Bihar. All subjects covered!</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-home"></i></div>
+                    <h3>Home Tuition</h3>
+                    <p>Classes 1-12 all subjects at your home</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Teacher Jobs</h3>
+                    <p>Home tuition jobs available now</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-school"></i></div>
+                    <h3>Coaching Jobs</h3>
+                    <p>Coaching center teaching jobs</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-university"></i></div>
+                    <h3>School Jobs</h3>
+                    <p>Part-time & full-time school jobs</p>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="action-btn" onclick="openWhatsAppStudent()">
+                    <i class="fas fa-user-graduate"></i>
+                    <strong>I NEED TEACHER<br><small>Classes 1-12 All Subjects</small></strong>
+                </button>
+                <button class="action-btn" onclick="openWhatsAppTeacherHome()">
+                    <i class="fas fa-home"></i>
+                    <strong>HOME TUITION JOBS<br><small>For Teachers</small></strong>
+                </button>
+                <button class="action-btn" onclick="openWhatsAppTeacherCoaching()">
+                    <i class="fas fa-school"></i>
+                    <strong>COACHING CENTER<br><small>Teaching Jobs</small></strong>
+                </button>
+                <button class="action-btn" onclick="openWhatsAppTeacherSchool()">
+                    <i class="fas fa-briefcase"></i>
+                    <strong>SCHOOL JOBS<br><small>Part/Full Time</small></strong>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">What We Offer</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-book-open"></i></div>
+                    <h3>Classes 1-12</h3>
+                    <p>All classes covered with expert teachers</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-globe"></i></div>
+                    <h3>All Subjects</h3>
+                    <p>Every subject from every board</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Gaya Wide</h3>
+                    <p>Serving entire Gaya district</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-whatsapp"></i></div>
+                    <h3>Instant Contact</h3>
+                    <p>Direct WhatsApp connection</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Your Name *" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" placeholder="Phone Number *" required>
+                </div>
+                <div class="form-group">
+                    <select id="service" required>
+                        <option value="">Select Requirement *</option>
+                        <option value="student">I need teacher (Classes 1-12)</option>
+                        <option value="teacher-home">Teacher - Home tuition job</option>
+                        <option value="teacher-coaching">Teacher - Coaching job</option>
+                        <option value="teacher-school">Teacher - School job</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" rows="4" placeholder="Class/Subject details..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send to WhatsApp</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp -->
+    <div class="fab-container">
+        <button class="fab-sub" onclick="openWhatsAppStudent()" title="Need Teacher">
+            <i class="fas fa-user-graduate"></i>
+        </button>
+        <button class="fab-sub" onclick="openWhatsAppTeacherHome()" title="Home Tuition Jobs">
+            <i class="fas fa-home"></i>
+        </button>
+        <button class="fab-sub" onclick="openWhatsAppTeacherCoaching()" title="Coaching Jobs">
+            <i class="fas fa-school"></i>
+        </button>
+        <button class="fab-sub" onclick="openWhatsAppTeacherSchool()" title="School Jobs">
+            <i class="fas fa-briefcase"></i>
+        </button>
+        <button class="fab-main" onclick="window.open('https://wa.me/919523701863', '_blank')" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://wa.me/919523701863" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>© 2026 Gayajii Teacher Hub | Gaya, Bihar | Classes 1-12 All Subjects<br>
+        <a href="https://wa.me/919523701863" style="color:#ffd700;">WhatsApp: 919523701863</a></p>
+    </footer>
+
+    <script>
+        // Mobile menu
+        document.getElementById('hamburger').onclick = () => {
+            document.getElementById('navLinks').classList.toggle('active');
+        };
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.onclick = e => {
+                e.preventDefault();
+                document.querySelector(a.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
+                document.getElementById('navLinks').classList.remove('active');
+            };
+        });
+
+        // WhatsApp functions
+        function openWhatsAppStudent() {
+            window.open('https://wa.me/919523701863?text=Hi%20Gayajii%20Teacher%20Hub!%20👋%0A%0AI%20NEED%20A%20TEACHER%20for%20Classes%201-12%20All%20Subjects%0A%0AClass:%20%0ASubject:%20%0ALocation:%20Gaya%0A', '_blank');
+        }
+
+        function openWhatsAppTeacherHome() {
+            window.open('https://wa.me/919523701863?text=Hi%20Gayajii%20Teacher%20Hub!%20👋%0A%0AI%27M%20A%20TEACHER%20-%20HOME%20TUITION%20JOBS%0A%0ASubjects:%20%0AClasses:%201-12%0AAvailable:%20Gaya', '_blank');
+        }
+
+        function openWhatsAppTeacherCoaching() {
+            window.open('https://wa.me/919523701863?text=Hi%20Gayajii%20Teacher%20Hub!%20👋%0A%0ATEACHER%20-%20COACHING%20CENTER%20JOBS%0A%0ASubjects:%20%0AClasses:%201-12%0AGaya%20area', '_blank');
+        }
+
+        function openWhatsAppTeacherSchool() {
+            window.open('https://wa.me/919523701863?text=Hi%20Gayajii%20Teacher%20Hub!%20👋%0A%0ATEACHER%20-%20SCHOOL%20TEACHING%20JOBS%0A%0AClasses:%201-12%0AFull/Part%20time:%20%0AGaya', '_blank');
+        }
+
+        // Contact form
+        document.getElementById('contactForm').onsubmit = e => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const msg = document.getElementById('message').value || '';
+            
+            let text = `Hi Gayajii Teacher Hub! 👋%0A%0A${service.toUpperCase()}%0AName: ${name}%0APhone: ${phone}`;
+            if (msg) text += `%0AMessage: ${msg}`;
+            text += '%0A%0AGaya, Bihar';
+            
+            window.open(`https://wa.me/919523701863?text=${text}`, '_blank');
+            e.target.reset();
+        };
+
+        // Animations
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+        document.querySelectorAll('.service-card, .action-btn').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
