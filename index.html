@@ -13,7 +13,7 @@
     <!-- KEYWORDS -->
     <meta name="keywords" content="home tuition in Gaya, teaching jobs in Gaya, part-time teacher jobs Gaya, full-time teacher jobs Gaya, school jobs Gaya, coaching center jobs Gaya, teachers in Gaya, students in Gaya">
     
-    <!-- FONT AWESOME - MOVED TO HEAD -->
+    <!-- FONT AWESOME -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
     <style>
@@ -71,7 +71,30 @@
             height: 50px;
             border-radius: 10px;
             object-fit: cover;
-            border: 2px solid var(--primary-color);
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 4px 15px rgba(44,90,160,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(44,90,160,0.4);
+        }
+        
+        /* FALLBACK LOGO - SVG if image fails to load */
+        .logo-fallback {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 4px 15px rgba(44,90,160,0.3);
         }
         
         header h1 {
@@ -402,7 +425,15 @@
     <!-- HEADER -->
     <header>
         <div class="header-left">
-            <img src="logo.png" alt="Gayajii Teacher Hub Logo - Home Tuition and Teaching Jobs in Gaya" class="logo" loading="lazy">
+            <!-- Primary logo with fallback -->
+            <picture>
+                <source srcset="logo.png" type="image/png">
+                <img src="logo.png" alt="Gayajii Teacher Hub Logo - Home Tuition and Teaching Jobs in Gaya" class="logo" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            </picture>
+            <!-- Fallback SVG Logo -->
+            <div class="logo-fallback" style="display: none;">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
             <div>
                 <h1>Gayajii Teacher Hub</h1>
                 <div class="tagline">Connecting Teachers, Students and Opportunities in Gaya</div>
