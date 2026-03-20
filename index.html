@@ -1,265 +1,545 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- SEO TITLE -->
-<title>Home Tuition & Teaching Jobs in Gaya | Gayajii Teacher Hub</title>
-
-<!-- META DESCRIPTION FOR GOOGLE -->
-<meta name="description" content="Gayajii Teacher Hub provides trusted home tuition in Gaya, Bihar. Find part-time & full-time teaching jobs in schools and coaching centers. Connect students and teachers in Gaya.">
-
-<!-- KEYWORDS (optional, still helps) -->
-<meta name="keywords" content="home tuition in Gaya, teaching jobs in Gaya, part-time teacher jobs Gaya, full-time teacher jobs Gaya, school jobs Gaya, coaching center jobs Gaya, teachers in Gaya, students in Gaya">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif;}
-body{background:#f8f9ff;color:#2c3e50;line-height:1.6;scroll-behavior:smooth;}
-a{text-decoration:none;color:inherit;}
-
-/* HEADER */
-header{
-position:fixed;width:100%;top:0;left:0;background:#fff;z-index:1000;
-padding:15px 10%;display:flex;justify-content:space-between;align-items:center;
-box-shadow:0 2px 10px rgba(0,50,100,0.1);
-}
-
-/* LOGO + TITLE */
-.header-left{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.logo{
-width:50px;
-height:50px;
-border-radius:10px;
-object-fit:cover;
-}
-
-header h1{color:#2c5aa0;font-size:26px;font-weight:700;}
-.tagline{font-size:12px;color:#7f8c8d;margin-top:2px;}
-
-nav a{margin-left:20px;font-weight:600;color:#34495e;transition:0.3s;}
-nav a:hover{color:#2c5aa0;}
-
-/* HERO */
-.hero{
-background:linear-gradient(135deg,#2c5aa0,#3498db);
-text-align:center;padding:130px 10% 80px;color:#fff;
-}
-
-.hero h2{font-size:40px;margin-bottom:15px;}
-.tagline-hero{font-size:22px;margin-bottom:20px;}
-.hero p{font-size:18px;margin-bottom:30px;}
-
-.hero button{
-background:#fff;color:#2c5aa0;border:none;padding:15px 35px;
-font-weight:700;font-size:16px;cursor:pointer;border-radius:30px;
-}
-
-.hero button:hover{transform:translateY(-2px);}
-
-/* SECTIONS */
-section{padding:80px 10%;opacity:0;transform:translateY(50px);transition:1s;}
-section.visible{opacity:1;transform:translateY(0);}
-section h2{text-align:center;font-size:32px;margin-bottom:50px;color:#2c5aa0;}
-
-/* ABOUT */
-.about{background:#fff;text-align:center;}
-
-/* SERVICES */
-.services{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;}
-.service-box{
-background:#fff;border-radius:15px;padding:30px;width:300px;
-box-shadow:0 10px 30px rgba(0,50,100,0.1);
-transition:0.3s;
-}
-.service-box:hover{transform:translateY(-10px);}
-.service-box i{font-size:40px;color:#3498db;margin-bottom:15px;}
-.service-box h3{margin-bottom:10px;color:#2c5aa0;}
-
-/* WHY */
-.why{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;}
-.why-box{
-background:#f8f9ff;border-radius:15px;padding:25px;width:250px;text-align:center;
-border:1px solid #3498db;
-}
-.why-box:hover{transform:scale(1.05);}
-.why-box i{font-size:35px;color:#3498db;margin-bottom:10px;}
-
-/* CONTACT */
-.contact{text-align:center;background:#fff;}
-.whatsapp-buttons{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;}
-
-.whatsapp-btn{
-background:#25D366;color:#fff;border:none;padding:15px 30px;
-font-weight:700;cursor:pointer;border-radius:30px;
-}
-.whatsapp-btn:hover{transform:translateY(-3px);}
-
-/* FLOATING WHATSAPP */
-.floating-whatsapp{position:fixed;bottom:25px;right:25px;}
-.floating-main{
-width:60px;height:60px;background:#25D366;border-radius:50%;
-display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px;
-}
-
-/* FOOTER */
-footer{
-background:#2c5aa0;color:#fff;text-align:center;padding:25px;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-
-header{flex-direction:column;align-items:flex-start;padding:15px 5%;}
-nav{margin-top:10px;}
-
-.logo{width:40px;height:40px;}
-
-.hero h2{font-size:28px;}
-.services,.why{flex-direction:column;align-items:center;}
-}
-</style>
-
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO TITLE -->
+    <title>Home Tuition & Teaching Jobs in Gaya | Gayajii Teacher Hub</title>
+    
+    <!-- META DESCRIPTION FOR GOOGLE -->
+    <meta name="description" content="Gayajii Teacher Hub provides trusted home tuition in Gaya, Bihar. Find part-time & full-time teaching jobs in schools and coaching centers. Connect students and teachers in Gaya.">
+    
+    <!-- KEYWORDS -->
+    <meta name="keywords" content="home tuition in Gaya, teaching jobs in Gaya, part-time teacher jobs Gaya, full-time teacher jobs Gaya, school jobs Gaya, coaching center jobs Gaya, teachers in Gaya, students in Gaya">
+    
+    <!-- FONT AWESOME - MOVED TO HEAD -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #2c5aa0;
+            --secondary-color: #3498db;
+            --accent-color: #25D366;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #f8f9ff;
+            --white: #fff;
+            --shadow: 0 10px 30px rgba(0,50,100,0.1);
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        a { text-decoration: none; color: inherit; }
+        
+        /* HEADER */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: var(--white);
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,50,100,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+        }
+        
+        header h1 {
+            color: var(--primary-color);
+            font-size: clamp(1.4rem, 4vw, 1.8rem);
+            font-weight: 700;
+        }
+        
+        .tagline {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+        
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+        
+        nav a:hover {
+            color: var(--primary-color);
+            background: var(--bg-light);
+        }
+        
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            text-align: center;
+            padding: 140px 5% 80px;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            pointer-events: none;
+        }
+        
+        .hero > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h2 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+        
+        .tagline-hero {
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+        
+        .hero p {
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero button {
+            background: var(--white);
+            color: var(--primary-color);
+            border: none;
+            padding: 1rem 2.5rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 50px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .hero button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0,50,100,0.2);
+        }
+        
+        /* SECTIONS */
+        section {
+            padding: 80px 5%;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s ease;
+        }
+        
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        section h2 {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+        
+        /* ABOUT */
+        .about {
+            background: var(--white);
+            text-align: center;
+        }
+        
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        /* SERVICES */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .service-box {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            border-top: 4px solid var(--secondary-color);
+        }
+        
+        .service-box:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0,50,100,0.15);
+        }
+        
+        .service-box i {
+            font-size: 3.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .service-box h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        /* WHY US */
+        .why {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .why-box {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            border: 2px solid var(--bg-light);
+            transition: all 0.3s ease;
+        }
+        
+        .why-box:hover {
+            transform: scale(1.05) translateY(-5px);
+            border-color: var(--secondary-color);
+            box-shadow: var(--shadow);
+        }
+        
+        .why-box i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .why-box h4 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+        
+        /* CONTACT */
+        .contact {
+            background: var(--white);
+            text-align: center;
+        }
+        
+        .contact p {
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .whatsapp-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .whatsapp-btn {
+            background: var(--accent-color);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2rem;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(37,211,102,0.3);
+            min-width: 200px;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(37,211,102,0.4);
+        }
+        
+        /* FLOATING WHATSAPP */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1001;
+        }
+        
+        .floating-main {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(37,211,102,0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .floating-main:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 35px rgba(37,211,102,0.5);
+        }
+        
+        /* FOOTER */
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 3%;
+                flex-wrap: wrap;
+            }
+            
+            nav {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                margin-top: 1rem;
+                gap: 1rem;
+            }
+            
+            .hero {
+                padding: 120px 3% 60px;
+            }
+            
+            section {
+                padding: 60px 3%;
+            }
+            
+            .whatsapp-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .whatsapp-btn {
+                max-width: 280px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 110px 2% 50px;
+            }
+            
+            .services, .why {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-left">
+            <img src="logo.png" alt="Gayajii Teacher Hub Logo - Home Tuition and Teaching Jobs in Gaya" class="logo" loading="lazy">
+            <div>
+                <h1>Gayajii Teacher Hub</h1>
+                <div class="tagline">Connecting Teachers, Students and Opportunities in Gaya</div>
+            </div>
+        </div>
+        <nav role="navigation" aria-label="Main navigation">
+            <a href="#about" aria-label="About section">About</a>
+            <a href="#services" aria-label="Services section">Services</a>
+            <a href="#why" aria-label="Why Us section">Why Us</a>
+            <a href="#contact" aria-label="Contact section">Contact</a>
+        </nav>
+    </header>
 
-<!-- HEADER -->
-<header>
-<div class="header-left">
-<img src="logo.png" alt="Gayajii Teacher Hub Logo - Home Tuition and Teaching Jobs in Gaya" class="logo">
+    <!-- HERO -->
+    <section class="hero">
+        <h2>Gayajii Teacher Hub</h2>
+        <div class="tagline-hero">Connecting Teachers, Students and Opportunities in Gaya</div>
+        <p>Classes 1-12 | All Subjects | Gaya, Bihar | Home Tuition & Teaching Jobs</p>
+        <button onclick="scrollToContact()" aria-label="Get started with WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> Get Started
+        </button>
+    </section>
 
-<div>
-<h1>Gayajii Teacher Hub</h1>
-<div class="tagline">Connecting Teachers, Students and Opportunities in Gaya</div>
-</div>
-</div>
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>Gayajii Teacher Hub connects students and teachers in Gaya, Bihar with trusted <strong>home tuition</strong> services and <strong>part-time & full-time teaching jobs</strong> in schools and coaching centers. We make learning and teaching opportunities accessible to everyone.</p>
+    </section>
 
-<nav>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#why">Why Us</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
+    <!-- SERVICES -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service-box">
+                <i class="fas fa-home" aria-hidden="true"></i>
+                <h3>Home Tuition</h3>
+                <p>Personal <strong>home tutoring in Gaya</strong> for Classes 1-12 in all subjects.</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
+                <h3>Coaching Jobs</h3>
+                <p>Find <strong>part-time & full-time teaching jobs in coaching centers in Gaya</strong>.</p>
+            </div>
+            <div class="service-box">
+                <i class="fas fa-school" aria-hidden="true"></i>
+                <h3>School Jobs</h3>
+                <p>Apply for <strong>teaching positions in schools in Gaya</strong> for all grades and subjects.</p>
+            </div>
+        </div>
+    </section>
 
-<!-- HERO -->
-<section class="hero">
-<h2>Gayajii Teacher Hub</h2>
-<div class="tagline-hero">Connecting Teachers, Students and Opportunities in Gaya</div>
-<p>Classes 1-12 | All Subjects | Gaya, Bihar | Home Tuition & Teaching Jobs</p>
+    <!-- WHY -->
+    <section id="why">
+        <h2>Why Choose Us</h2>
+        <div class="why">
+            <div class="why-box">
+                <i class="fas fa-user-check" aria-hidden="true"></i>
+                <h4>Verified Teachers</h4>
+                <p>We ensure all teachers are verified and experienced.</p>
+            </div>
+            <div class="why-box">
+                <i class="fas fa-clock" aria-hidden="true"></i>
+                <h4>Flexible Timing</h4>
+                <p>Choose part-time or full-time schedules according to your convenience.</p>
+            </div>
+            <div class="why-box">
+                <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                <h4>Safe Platform</h4>
+                <p>A trusted and safe platform for students and teachers in Gaya.</p>
+            </div>
+        </div>
+    </section>
 
-<button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-<i class="fab fa-whatsapp"></i> Get Started
-</button>
-</section>
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Get connected with the best <strong>home tuition teachers in Gaya</strong> or <strong>apply for teaching jobs in schools and coaching centers</strong>.</p>
+        <div class="whatsapp-buttons">
+            <button class="whatsapp-btn" onclick="openWhatsApp('I need a teacher in Gaya')" aria-label="WhatsApp - I need a teacher">
+                I NEED A TEACHER
+            </button>
+            <button class="whatsapp-btn" onclick="openWhatsApp('I want to apply for teaching job')" aria-label="WhatsApp - Apply for job">
+                APPLY FOR JOB
+            </button>
+        </div>
+    </section>
 
-<!-- ABOUT -->
-<section id="about" class="about">
-<h2>About Us</h2>
-<p>Gayajii Teacher Hub connects students and teachers in Gaya, Bihar with trusted <strong>home tuition</strong> services and <strong>part-time & full-time teaching jobs</strong> in schools and coaching centers. We make learning and teaching opportunities accessible to everyone.</p>
-</section>
+    <!-- FLOATING WHATSAPP -->
+    <div class="floating-whatsapp">
+        <div class="floating-main" onclick="openWhatsApp('Hello, I want to know more about Gayajii Teacher Hub')" aria-label="WhatsApp chat" title="Chat on WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </div>
+    </div>
 
-<!-- SERVICES -->
-<section id="services">
-<h2>Our Services</h2>
-<div class="services">
+    <!-- FOOTER -->
+    <footer>
+        <p>Gayajii Teacher Hub - Gaya, Bihar &copy; 2026 | Home Tuition & Teaching Jobs</p>
+    </footer>
 
-<div class="service-box">
-<i class="fas fa-home"></i>
-<h3>Home Tuition</h3>
-<p>Personal <strong>home tutoring in Gaya</strong> for Classes 1-12 in all subjects.</p>
-</div>
-
-<div class="service-box">
-<i class="fas fa-chalkboard-teacher"></i>
-<h3>Coaching Jobs</h3>
-<p>Find <strong>part-time & full-time teaching jobs in coaching centers in Gaya</strong>.</p>
-</div>
-
-<div class="service-box">
-<i class="fas fa-school"></i>
-<h3>School Jobs</h3>
-<p>Apply for <strong>teaching positions in schools in Gaya</strong> for all grades and subjects.</p>
-</div>
-
-</div>
-</section>
-
-<!-- WHY -->
-<section id="why">
-<h2>Why Choose Us</h2>
-<div class="why">
-
-<div class="why-box">
-<i class="fas fa-user-check"></i>
-<h4>Verified Teachers</h4>
-<p>We ensure all teachers are verified and experienced.</p>
-</div>
-
-<div class="why-box">
-<i class="fas fa-clock"></i>
-<h4>Flexible Timing</h4>
-<p>Choose part-time or full-time schedules according to your convenience.</p>
-</div>
-
-<div class="why-box">
-<i class="fas fa-shield-alt"></i>
-<h4>Safe Platform</h4>
-<p>A trusted and safe platform for students and teachers in Gaya.</p>
-</div>
-
-</div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-<h2>Contact Us</h2>
-<p>Get connected with the best <strong>home tuition teachers in Gaya</strong> or <strong>apply for teaching jobs in schools and coaching centers</strong>.</p>
-
-<div class="whatsapp-buttons">
-<button class="whatsapp-btn" onclick="window.open('https://wa.me/919523701863')">
-I NEED A TEACHER
-</button>
-
-<button class="whatsapp-btn" onclick="window.open('https://wa.me/919523701863')">
-APPLY FOR JOB
-</button>
-</div>
-
-</section>
-
-<!-- FLOATING -->
-<div class="floating-whatsapp">
-<div class="floating-main" onclick="window.open('https://wa.me/919523701863')">
-<i class="fab fa-whatsapp"></i>
-</div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-<p>Gayajii Teacher Hub - Gaya, Bihar © 2026 | Home Tuition & Teaching Jobs</p>
-</footer>
-
-<script>
-const sections=document.querySelectorAll('section');
-
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add('visible');
-}
-});
-});
-
-sections.forEach(section=>observer.observe(section));
-</script>
-
+    <script>
+        // Smooth scroll to contact
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // WhatsApp links with pre-filled messages
+        function openWhatsApp(message) {
+            const phone = '919523701863';
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+        
+        // Intersection Observer for animations
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        sections.forEach(section => observer.observe(section));
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = '#fff';
+                header.style.backdropFilter = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
